@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+/**
+ * dev-cli-kit - A modern CLI toolkit for developers - project scaffolding, code generation, and workflow automation
+ * 
+ * CLI工具入口
+ */
+
+import { Command } from 'commander';
+import chalk from 'chalk';
+import ora from 'ora';
+
+const program = new Command();
+
+program
+  .name('dev-cli-kit')
+  .description('A modern CLI toolkit for developers - project scaffolding, code generation, and workflow automation')
+  .version('0.1.0');
+
+program
+  .command('init')
+  .description('Initialize a new project')
+  .option('-n, --name <name>', 'Project name')
+  .action(async (options) => {
+    const spinner = ora('Initializing project...').start();
+    try {
+      // TODO: Implement init logic
+      await new Promise(r => setTimeout(r, 500));
+      spinner.succeed(chalk.green(`Project "${options.name || 'my-project'}" created!`));
+    } catch (err) {
+      spinner.fail(chalk.red(`Failed: ${err}`));
+    }
+  });
+
+program
+  .command('generate')
+  .description('Generate code from template')
+  .option('-t, --type <type>', 'Template type')
+  .action(async (options) => {
+    console.log(chalk.blue(`Generating ${options.type || 'default'} template...`));
+  });
+
+program.parse(process.argv);
