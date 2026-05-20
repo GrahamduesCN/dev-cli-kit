@@ -1,55 +1,80 @@
 # dev-cli-kit
 
-[![npm version](https://badge.fury.io/js/dev-cli-kit.svg)](https://www.npmjs.com/package/dev-cli-kit)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/GrahamduesCN/dev-cli-kit/pulls)
-[![GitHub stars](https://img.shields.io/github/stars/GrahamduesCN/dev-cli-kit?style=social)](https://github.com/GrahamduesCN/dev-cli-kit)
+Developer CLI toolkit — project scaffolding, code generation, and git workflow helpers.
 
-> A modern CLI toolkit for developers - project scaffolding, code generation, and workflow automation
+## What this actually does
 
-## ✨ Features
+- **Scaffold projects** from 3 built-in templates (Node/TS, React/Vite, CLI tool)
+- **Generate boilerplate** — components, hooks, utilities, API routes
+- **Git helpers** — stats overview and merged branch cleanup
 
-- 🚀 **Interactive CLI** with beautiful prompts
-- 📦 **Project Scaffolding** for popular frameworks
-- 🔧 **Code Generation** from templates
-- ⚙️ **Git Workflow Automation**
-- 🧩 **Plugin System** for custom commands
-- 🎨 **Beautiful Output** with spinners and colors
-
-## 🚀 Quick Start
+## Install
 
 ```bash
-# Install globally
 npm install -g dev-cli-kit
-
-# Or run directly
-npx dev-cli-kit init my-project
 ```
 
-## 📖 Usage
+## Usage
+
+### Scaffold a project
 
 ```bash
-# Initialize a new project
-dev-cli-kit init
+# List templates
+dev-cli-kit init --list
 
-# Generate code from template
-dev-cli-kit generate --type component
+# Create a Node.js + TypeScript project
+dev-cli-kit init --template node-ts --name my-lib
 
-# List available commands
-dev-cli-kit --help
+# Create a React + Vite app
+dev-cli-kit init --template react-vite --name my-app
+
+# Create a CLI tool
+dev-cli-kit init --template cli-tool --name my-cli
 ```
 
-## 📊 Stats
+### Generate code
 
-![GitHub stars](https://img.shields.io/github/stars/GrahamduesCN/dev-cli-kit?style=social)
+```bash
+# React component
+dev-cli-kit generate component UserProfile
 
-## 💖 Support
+# React hook
+dev-cli-kit generate hook useAuth
 
-If this tool helps your workflow, please consider:
-- ⭐ Starring the repository
-- 💰 [Sponsoring on GitHub](https://github.com/sponsors/GrahamduesCN)
-- ☕ [Buying me a coffee](https://www.buymeacoffee.com/GrahamduesCN)
+# Utility file
+dev-cli-kit generate util formatDate
 
-## 📄 License
+# Next.js API route
+dev-cli-kit generate api users
+```
 
-MIT © [GrahamduesCN](https://github.com/GrahamduesCN)\n\n## 💖 Support This Project\n\nIf this project helps you, please support:\n\n| Method | Link |\n|--------|------|\n| PayPal | [paypal.me/GrahamduesCN](https://paypal.me/GrahamduesCN) |\n| Buy Me a Coffee | [buymeacoffee.com/GrahamduesCN](https://www.buymeacoffee.com/GrahamduesCN) |\n| GitHub Sponsor | [github.com/sponsors/GrahamduesCN](https://github.com/sponsors/GrahamduesCN) |\n\nEvery contribution helps keep this project maintained and growing!
+### Git helpers
+
+```bash
+# Repository stats (branch, changed files, recent commits)
+dev-cli-kit git stats
+
+# List merged branches ready for cleanup
+dev-cli-kit git clean
+```
+
+## Built-in Templates
+
+| Template | Description |
+|----------|-------------|
+| `node-ts` | Node.js library with TypeScript, Vitest, tsx |
+| `react-vite` | React SPA with Vite, TypeScript |
+| `cli-tool` | CLI tool with Commander, Chalk |
+
+## Requirements
+
+- Node.js >= 18
+- Git (for `git` commands)
+
+## License
+
+MIT
+
+---
+
+Built with [Commander](https://github.com/tj/commander.js), [Chalk](https://github.com/chalk/chalk), and [Ora](https://github.com/sindresorhus/ora).
