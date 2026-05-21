@@ -78,3 +78,11 @@ MIT
 ---
 
 Built with [Commander](https://github.com/tj/commander.js), [Chalk](https://github.com/chalk/chalk), and [Ora](https://github.com/sindresorhus/ora).
+
+## Related Projects
+
+| Project | Description |
+|---------|-------------|
+| [ai-agent-starter](https://github.com/GrahamduesCN/ai-agent-starter) | Multi-provider AI agent framework |
+| [nextjs-saas-starter](https://github.com/GrahamduesCN/nextjs-saas-starter) | Next.js 14 SaaS starter |
+| [ai-chat-saas](https://github.com/GrahamduesCN/ai-chat-saas) | AI chat app template ($19)
